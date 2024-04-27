@@ -16,5 +16,7 @@ int main(int argc, char **argv)
 
 
 /**
- * LEA d, a, b, c ;         d = (a << c) + b
+ * LEA d, a, b, c ;                             d = (a << c) + b
+ * LEA dst, carry, index, base, shift;          (dst, carry) = base + lo(index << shift)
+ * LEA.HI dst, index, baseHi, shift, carry;     dst = baseHi + hi(index << shift) + carry
 */
