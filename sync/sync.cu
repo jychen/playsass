@@ -26,6 +26,12 @@ __global__ void warpsync_kernel(int *a)
     if (threadIdx.x == 0) *a = 100;
 }
 
+__global__ void threadsync_kernel()
+{
+    auto g = cooperative_groups::this_thread();
+    g.sync();
+}
+
 int main(int argc, char **argv)
 {
     return 0;
