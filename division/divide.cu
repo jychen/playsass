@@ -12,6 +12,11 @@ __global__ void divide_by_var(uint32_t *a, uint32_t b)
     a[0] = a[0] / b;
 }
 
+__global__ void divide_by_var_64(uint64_t *a, uint64_t b)
+{
+    a[0] = a[0] / b;
+}
+
 int main(int argc, char **argv)
 {
     uint32_t var = atoi(argv[1]);
