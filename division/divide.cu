@@ -1,8 +1,13 @@
 #include "cuda.h"
 
-#define DIVISOR 19
+#define DIVISOR 3512
 
 __global__ void divide_by_const(uint32_t *a)
+{
+    a[0] = a[0] / DIVISOR;
+}
+
+__global__ void divide_by_const_64(uint64_t *a)
 {
     a[0] = a[0] / DIVISOR;
 }
