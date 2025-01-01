@@ -1,5 +1,5 @@
 def magic(divisor, ilog):
-    return 2**ilog // divisor
+    return (2**ilog + divisor - 1) // divisor
 
 def split64to32(u64):
     return (u64 >> 32, u64 & 0xFFFFFFFF)
@@ -19,7 +19,8 @@ def concat32to64(hi, lo):
     return hi * 2**32 + lo
 
 def divisor_from_magic(magic, ilog):
-    return 2**ilog // magic
+    return (2**ilog + magic - 1) // magic
+    
 
 print(hex(magic(3256, 43)))
 print(hex(magic(3256, 75)))
